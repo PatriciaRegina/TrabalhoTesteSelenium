@@ -1,0 +1,537 @@
+[0.001][INFO]:      ChromeDriver 23.0.1240.0 D:\Facul - Pos\POS Graduacao\IFACES - Pos Java\Testes\work\andvicente-Selenium-Aula-f3211db\src\test\chromedriver.exe
+[0.967][FINE]:      Initializing session with capabilities {
+   "browserName": "chrome",
+   "platform": "ANY",
+   "version": ""
+}
+
+[0.967][INFO]:      Launching chrome: "C:\Users\flcrepaldi\AppData\Local\Google\Chrome\Application\chrome.exe" --enable-logging --log-level=1 --disable-hang-monitor --disable-prompt-on-repost --dom-automation --full-memory-crash-report --no-default-browser-check --no-first-run --disable-background-networking --disable-sync --disable-translate --disable-web-resources --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --ignore-certificate-errors about:blank
+[1.247][INFO]:      Connected to Chrome successfully. Version: 22.0.1229.94
+[1.266][FINE]:      Command received (/session/0c1b23cb117f21b0dc851b0aebb2c5f9)
+[1.266][FINE]:      Command finished (/session/0c1b23cb117f21b0dc851b0aebb2c5f9) with response {
+   "sessionId": "0c1b23cb117f21b0dc851b0aebb2c5f9",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "23.0.1240.0",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "windows",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "22.0.1229.94",
+      "webStorageEnabled": true
+   }
+}
+
+[1.269][FINE]:      Command received (/session/0c1b23cb117f21b0dc851b0aebb2c5f9/timeouts/implicit_wait) with params {
+   "ms": 10000
+}
+
+[1.270][FINER]:     Waiting for all views to stop loading...
+[1.271][FINER]:     Done waiting for all views to stop loading
+[1.271][FINER]:     Waiting for all views to stop loading...
+[1.271][FINER]:     Done waiting for all views to stop loading
+[1.271][FINE]:      Command finished (/session/0c1b23cb117f21b0dc851b0aebb2c5f9/timeouts/implicit_wait) with response {
+   "sessionId": "0c1b23cb117f21b0dc851b0aebb2c5f9",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[1.274][FINE]:      Command received (/session/0c1b23cb117f21b0dc851b0aebb2c5f9/url) with params {
+   "url": "http://esporte.uol.com.br/futebol/campeonatos/brasileiro/2012/serie-a/classificacao/classificacao..."
+}
+
+[1.274][FINER]:     Waiting for all views to stop loading...
+[1.274][FINER]:     Done waiting for all views to stop loading
+[11.564][FINER]:    Waiting for all views to stop loading...
+[11.573][FINER]:    Done waiting for all views to stop loading
+[11.574][FINE]:     Command finished (/session/0c1b23cb117f21b0dc851b0aebb2c5f9/url) with response {
+   "sessionId": "0c1b23cb117f21b0dc851b0aebb2c5f9",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[11.576][FINE]:     Command received (/session/0c1b23cb117f21b0dc851b0aebb2c5f9/title)
+[11.576][FINER]:    Waiting for all views to stop loading...
+[11.576][FINER]:    Done waiting for all views to stop loading
+[11.599][FINER]:    Waiting for all views to stop loading...
+[11.599][FINER]:    Done waiting for all views to stop loading
+[11.600][FINE]:     Command finished (/session/0c1b23cb117f21b0dc851b0aebb2c5f9/title) with response {
+   "sessionId": "0c1b23cb117f21b0dc851b0aebb2c5f9",
+   "status": 0,
+   "value": "Classifica\u00E7\u00E3o do Campeonato Brasileiro 2012 de Futebol - UOL Esporte"
+}
+
+[11.602][FINE]:     Command received (/session/0c1b23cb117f21b0dc851b0aebb2c5f9)
+[12.622][INFO]:     Chrome shutdown
+[13.809][FINE]:     Initializing session with capabilities {
+   "browserName": "chrome",
+   "platform": "ANY",
+   "version": ""
+}
+
+[13.809][INFO]:     Launching chrome: "C:\Users\flcrepaldi\AppData\Local\Google\Chrome\Application\chrome.exe" --enable-logging --log-level=1 --disable-hang-monitor --disable-prompt-on-repost --dom-automation --full-memory-crash-report --no-default-browser-check --no-first-run --disable-background-networking --disable-sync --disable-translate --disable-web-resources --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --ignore-certificate-errors about:blank
+[14.095][INFO]:     Connected to Chrome successfully. Version: 22.0.1229.94
+[14.110][FINE]:     Command received (/session/714170bf1a9e0cda3f343e323a8f7cbb)
+[14.110][FINE]:     Command finished (/session/714170bf1a9e0cda3f343e323a8f7cbb) with response {
+   "sessionId": "714170bf1a9e0cda3f343e323a8f7cbb",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "23.0.1240.0",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "windows",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "22.0.1229.94",
+      "webStorageEnabled": true
+   }
+}
+
+[14.114][FINE]:     Command received (/session/714170bf1a9e0cda3f343e323a8f7cbb/timeouts/implicit_wait) with params {
+   "ms": 10000
+}
+
+[14.114][FINER]:    Waiting for all views to stop loading...
+[14.115][FINER]:    Done waiting for all views to stop loading
+[14.115][FINER]:    Waiting for all views to stop loading...
+[14.115][FINER]:    Done waiting for all views to stop loading
+[14.115][FINE]:     Command finished (/session/714170bf1a9e0cda3f343e323a8f7cbb/timeouts/implicit_wait) with response {
+   "sessionId": "714170bf1a9e0cda3f343e323a8f7cbb",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[14.117][FINE]:     Command received (/session/714170bf1a9e0cda3f343e323a8f7cbb/url) with params {
+   "url": "http://esporte.uol.com.br/futebol/campeonatos/brasileiro/2012/serie-a/classificacao/classificacao..."
+}
+
+[14.117][FINER]:    Waiting for all views to stop loading...
+[14.118][FINER]:    Done waiting for all views to stop loading
+[29.375][FINER]:    Waiting for all views to stop loading...
+[29.383][FINER]:    Done waiting for all views to stop loading
+[29.383][FINE]:     Command finished (/session/714170bf1a9e0cda3f343e323a8f7cbb/url) with response {
+   "sessionId": "714170bf1a9e0cda3f343e323a8f7cbb",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[29.387][FINE]:     Command received (/session/714170bf1a9e0cda3f343e323a8f7cbb/title)
+[29.387][FINER]:    Waiting for all views to stop loading...
+[29.387][FINER]:    Done waiting for all views to stop loading
+[29.423][FINER]:    Waiting for all views to stop loading...
+[29.423][FINER]:    Done waiting for all views to stop loading
+[29.423][FINE]:     Command finished (/session/714170bf1a9e0cda3f343e323a8f7cbb/title) with response {
+   "sessionId": "714170bf1a9e0cda3f343e323a8f7cbb",
+   "status": 0,
+   "value": "Classifica\u00E7\u00E3o do Campeonato Brasileiro 2012 de Futebol - UOL Esporte"
+}
+
+[29.427][FINE]:     Command received (/session/714170bf1a9e0cda3f343e323a8f7cbb)
+[30.338][INFO]:     Chrome shutdown
+[31.542][FINE]:     Initializing session with capabilities {
+   "browserName": "chrome",
+   "platform": "ANY",
+   "version": ""
+}
+
+[31.542][INFO]:     Launching chrome: "C:\Users\flcrepaldi\AppData\Local\Google\Chrome\Application\chrome.exe" --enable-logging --log-level=1 --disable-hang-monitor --disable-prompt-on-repost --dom-automation --full-memory-crash-report --no-default-browser-check --no-first-run --disable-background-networking --disable-sync --disable-translate --disable-web-resources --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --ignore-certificate-errors about:blank
+[31.798][INFO]:     Connected to Chrome successfully. Version: 22.0.1229.94
+[31.818][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8)
+[31.818][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "23.0.1240.0",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "windows",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "22.0.1229.94",
+      "webStorageEnabled": true
+   }
+}
+
+[31.823][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/timeouts/implicit_wait) with params {
+   "ms": 10000
+}
+
+[31.823][FINER]:    Waiting for all views to stop loading...
+[31.823][FINER]:    Done waiting for all views to stop loading
+[31.823][FINER]:    Waiting for all views to stop loading...
+[31.823][FINER]:    Done waiting for all views to stop loading
+[31.823][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/timeouts/implicit_wait) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[31.826][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/url) with params {
+   "url": "http://esporte.uol.com.br/futebol/campeonatos/brasileiro/2012/serie-a/classificacao/classificacao..."
+}
+
+[31.826][FINER]:    Waiting for all views to stop loading...
+[31.826][FINER]:    Done waiting for all views to stop loading
+[44.287][FINER]:    Waiting for all views to stop loading...
+[44.296][FINER]:    Done waiting for all views to stop loading
+[44.296][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/url) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[44.299][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/title)
+[44.299][FINER]:    Waiting for all views to stop loading...
+[44.299][FINER]:    Done waiting for all views to stop loading
+[44.304][FINER]:    Waiting for all views to stop loading...
+[44.304][FINER]:    Done waiting for all views to stop loading
+[44.304][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/title) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": "Classifica\u00E7\u00E3o do Campeonato Brasileiro 2012 de Futebol - UOL Esporte"
+}
+
+[44.308][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/element) with params {
+   "using": "css selector",
+   "value": "table#classificationTable tr:nth-of-type(20) \u003E td:nth-of-type(1)"
+}
+
+[44.308][FINER]:    Waiting for all views to stop loading...
+[44.308][FINER]:    Done waiting for all views to stop loading
+[44.324][FINER]:    Waiting for all views to stop loading...
+[44.325][FINER]:    Done waiting for all views to stop loading
+[44.325][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/element) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": {
+      "ELEMENT": ":wdc:1350524897627"
+   }
+}
+
+[44.327][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/element/:wdc:1350524897627/text)
+[44.327][FINER]:    Waiting for all views to stop loading...
+[44.327][FINER]:    Done waiting for all views to stop loading
+[44.387][FINER]:    Waiting for all views to stop loading...
+[44.388][FINER]:    Done waiting for all views to stop loading
+[44.388][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/element/:wdc:1350524897627/text) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": "20\nAtl\u00E9tico-GO"
+}
+
+[44.390][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/element) with params {
+   "using": "css selector",
+   "value": "table#classificationTable tr:nth-of-type(19) \u003E td:nth-of-type(1)"
+}
+
+[44.390][FINER]:    Waiting for all views to stop loading...
+[44.391][FINER]:    Done waiting for all views to stop loading
+[44.406][FINER]:    Waiting for all views to stop loading...
+[44.407][FINER]:    Done waiting for all views to stop loading
+[44.407][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/element) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": {
+      "ELEMENT": ":wdc:1350524897628"
+   }
+}
+
+[44.409][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/element/:wdc:1350524897628/text)
+[44.409][FINER]:    Waiting for all views to stop loading...
+[44.409][FINER]:    Done waiting for all views to stop loading
+[44.444][FINER]:    Waiting for all views to stop loading...
+[44.445][FINER]:    Done waiting for all views to stop loading
+[44.445][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/element/:wdc:1350524897628/text) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": "19\nSport\n-2"
+}
+
+[44.448][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/element) with params {
+   "using": "css selector",
+   "value": "table#classificationTable tr:nth-of-type(18) \u003E td:nth-of-type(1)"
+}
+
+[44.448][FINER]:    Waiting for all views to stop loading...
+[44.448][FINER]:    Done waiting for all views to stop loading
+[44.464][FINER]:    Waiting for all views to stop loading...
+[44.464][FINER]:    Done waiting for all views to stop loading
+[44.464][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/element) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": {
+      "ELEMENT": ":wdc:1350524897629"
+   }
+}
+
+[44.467][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/element/:wdc:1350524897629/text)
+[44.467][FINER]:    Waiting for all views to stop loading...
+[44.467][FINER]:    Done waiting for all views to stop loading
+[44.504][FINER]:    Waiting for all views to stop loading...
+[44.504][FINER]:    Done waiting for all views to stop loading
+[44.504][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/element/:wdc:1350524897629/text) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": "18\nFigueirense\n1"
+}
+
+[44.507][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/element) with params {
+   "using": "css selector",
+   "value": "table#classificationTable tr:nth-of-type(17) \u003E td:nth-of-type(1)"
+}
+
+[44.507][FINER]:    Waiting for all views to stop loading...
+[44.507][FINER]:    Done waiting for all views to stop loading
+[44.522][FINER]:    Waiting for all views to stop loading...
+[44.523][FINER]:    Done waiting for all views to stop loading
+[44.523][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/element) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": {
+      "ELEMENT": ":wdc:1350524897630"
+   }
+}
+
+[44.525][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8/element/:wdc:1350524897630/text)
+[44.525][FINER]:    Waiting for all views to stop loading...
+[44.526][FINER]:    Done waiting for all views to stop loading
+[44.559][FINER]:    Waiting for all views to stop loading...
+[44.560][FINER]:    Done waiting for all views to stop loading
+[44.560][FINE]:     Command finished (/session/4227147d4df1c95711aff30fe4abe9b8/element/:wdc:1350524897630/text) with response {
+   "sessionId": "4227147d4df1c95711aff30fe4abe9b8",
+   "status": 0,
+   "value": "17\nPalmeiras\n1"
+}
+
+[44.562][FINE]:     Command received (/session/4227147d4df1c95711aff30fe4abe9b8)
+[45.825][INFO]:     Chrome shutdown
+[46.966][FINE]:     Initializing session with capabilities {
+   "browserName": "chrome",
+   "platform": "ANY",
+   "version": ""
+}
+
+[46.966][INFO]:     Launching chrome: "C:\Users\flcrepaldi\AppData\Local\Google\Chrome\Application\chrome.exe" --enable-logging --log-level=1 --disable-hang-monitor --disable-prompt-on-repost --dom-automation --full-memory-crash-report --no-default-browser-check --no-first-run --disable-background-networking --disable-sync --disable-translate --disable-web-resources --safebrowsing-disable-auto-update --safebrowsing-disable-download-protection --disable-client-side-phishing-detection --disable-component-update --disable-default-apps --ignore-certificate-errors about:blank
+[47.257][INFO]:     Connected to Chrome successfully. Version: 22.0.1229.94
+[47.273][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b)
+[47.274][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "23.0.1240.0",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "windows",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "22.0.1229.94",
+      "webStorageEnabled": true
+   }
+}
+
+[47.278][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/timeouts/implicit_wait) with params {
+   "ms": 10000
+}
+
+[47.278][FINER]:    Waiting for all views to stop loading...
+[47.279][FINER]:    Done waiting for all views to stop loading
+[47.279][FINER]:    Waiting for all views to stop loading...
+[47.279][FINER]:    Done waiting for all views to stop loading
+[47.279][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/timeouts/implicit_wait) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[47.281][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/url) with params {
+   "url": "http://esporte.uol.com.br/futebol/campeonatos/brasileiro/2012/serie-a/classificacao/classificacao..."
+}
+
+[47.281][FINER]:    Waiting for all views to stop loading...
+[47.281][FINER]:    Done waiting for all views to stop loading
+[60.768][FINER]:    Waiting for all views to stop loading...
+[60.777][FINER]:    Done waiting for all views to stop loading
+[60.777][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/url) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": {
+
+   }
+}
+
+[60.780][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/title)
+[60.780][FINER]:    Waiting for all views to stop loading...
+[60.781][FINER]:    Done waiting for all views to stop loading
+[60.819][FINER]:    Waiting for all views to stop loading...
+[60.819][FINER]:    Done waiting for all views to stop loading
+[60.819][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/title) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": "Classifica\u00E7\u00E3o do Campeonato Brasileiro 2012 de Futebol - UOL Esporte"
+}
+
+[60.823][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/element) with params {
+   "using": "css selector",
+   "value": "table#classificationTable tr:nth-of-type(1) \u003E td:nth-of-type(1)"
+}
+
+[60.823][FINER]:    Waiting for all views to stop loading...
+[60.824][FINER]:    Done waiting for all views to stop loading
+[60.852][FINER]:    Waiting for all views to stop loading...
+[60.862][FINER]:    Done waiting for all views to stop loading
+[60.862][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/element) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": {
+      "ELEMENT": ":wdc:1350524914155"
+   }
+}
+
+[60.865][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/element/:wdc:1350524914155/text)
+[60.865][FINER]:    Waiting for all views to stop loading...
+[60.865][FINER]:    Done waiting for all views to stop loading
+[60.901][FINER]:    Waiting for all views to stop loading...
+[60.901][FINER]:    Done waiting for all views to stop loading
+[60.901][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/element/:wdc:1350524914155/text) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": "1\nFluminense"
+}
+
+[60.904][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/element) with params {
+   "using": "css selector",
+   "value": "table#classificationTable tr:nth-of-type(2) \u003E td:nth-of-type(1)"
+}
+
+[60.904][FINER]:    Waiting for all views to stop loading...
+[60.904][FINER]:    Done waiting for all views to stop loading
+[60.921][FINER]:    Waiting for all views to stop loading...
+[60.922][FINER]:    Done waiting for all views to stop loading
+[60.922][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/element) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": {
+      "ELEMENT": ":wdc:1350524914156"
+   }
+}
+
+[60.924][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/element/:wdc:1350524914156/text)
+[60.924][FINER]:    Waiting for all views to stop loading...
+[60.925][FINER]:    Done waiting for all views to stop loading
+[60.959][FINER]:    Waiting for all views to stop loading...
+[60.960][FINER]:    Done waiting for all views to stop loading
+[60.960][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/element/:wdc:1350524914156/text) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": "2\nAtl\u00E9tico-MG"
+}
+
+[60.962][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/element) with params {
+   "using": "css selector",
+   "value": "table#classificationTable tr:nth-of-type(3) \u003E td:nth-of-type(1)"
+}
+
+[60.962][FINER]:    Waiting for all views to stop loading...
+[60.962][FINER]:    Done waiting for all views to stop loading
+[60.979][FINER]:    Waiting for all views to stop loading...
+[60.980][FINER]:    Done waiting for all views to stop loading
+[60.980][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/element) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": {
+      "ELEMENT": ":wdc:1350524914157"
+   }
+}
+
+[60.982][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/element/:wdc:1350524914157/text)
+[60.982][FINER]:    Waiting for all views to stop loading...
+[60.982][FINER]:    Done waiting for all views to stop loading
+[61.013][FINER]:    Waiting for all views to stop loading...
+[61.014][FINER]:    Done waiting for all views to stop loading
+[61.014][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/element/:wdc:1350524914157/text) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": "3\nGr\u00EAmio"
+}
+
+[61.025][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/element) with params {
+   "using": "css selector",
+   "value": "table#classificationTable tr:nth-of-type(4) \u003E td:nth-of-type(1)"
+}
+
+[61.025][FINER]:    Waiting for all views to stop loading...
+[61.026][FINER]:    Done waiting for all views to stop loading
+[61.040][FINER]:    Waiting for all views to stop loading...
+[61.040][FINER]:    Done waiting for all views to stop loading
+[61.041][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/element) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": {
+      "ELEMENT": ":wdc:1350524914158"
+   }
+}
+
+[61.043][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b/element/:wdc:1350524914158/text)
+[61.043][FINER]:    Waiting for all views to stop loading...
+[61.043][FINER]:    Done waiting for all views to stop loading
+[61.076][FINER]:    Waiting for all views to stop loading...
+[61.077][FINER]:    Done waiting for all views to stop loading
+[61.077][FINE]:     Command finished (/session/be624b52818eec6c10e2fe4af1d8db5b/element/:wdc:1350524914158/text) with response {
+   "sessionId": "be624b52818eec6c10e2fe4af1d8db5b",
+   "status": 0,
+   "value": "4\nS\u00E3o Paulo"
+}
+
+[61.080][FINE]:     Command received (/session/be624b52818eec6c10e2fe4af1d8db5b)
+[61.969][INFO]:     Chrome shutdown

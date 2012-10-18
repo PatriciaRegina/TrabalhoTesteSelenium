@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>TelaCotacoesUOL.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">andvicente-Selenium-Aula-f3211db (17/10/2012 22:48:37)</a> &gt; <a href="../../index.html" class="el_group">andvicente-Selenium-Aula-f3211db</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.html" class="el_package">com.andre.selenium.telas.cotacao</a> &gt; <span class="el_source">TelaCotacoesUOL.java</span></div><h1>TelaCotacoesUOL.java</h1><pre class="source lang-java linenums">package com.andre.selenium.telas.cotacao;
+
+import com.andre.selenium.SeleniumWebDriver;
+import com.andre.selenium.dominio.Moeda;
+
+public class TelaCotacoesUOL {
+
+	private SeleniumWebDriver selenium;
+	private static final String URL = &quot;http://economia.uol.com.br/cotacoes/cambio.jhtm&quot;;
+
+<span class="fc" id="L11">	public TelaCotacoesUOL(SeleniumWebDriver selenium) {</span>
+<span class="fc" id="L12">		this.selenium = selenium;</span>
+<span class="fc" id="L13">	}</span>
+
+	public void abrir() {
+<span class="fc" id="L16">		selenium.driver.get(URL);</span>
+<span class="fc" id="L17">		selenium.assertTitle(&quot;Cotações: Dólar, Euro, outras moedas, bolsas e índices - Calculadoras - UOL Economia&quot;);</span>
+<span class="fc" id="L18">	}</span>
+
+	public Moeda consultarCotacaoDolarComercial() {
+<span class="fc" id="L21">		selenium.selectByVisibleText(localizarComboMoedas(),</span>
+<span class="fc" id="L22">				&quot;Estados Unidos - Dólar comercial&quot;);</span>
+
+<span class="fc" id="L24">		Moeda dolar = new Moeda();</span>
+<span class="fc" id="L25">		preencherCotacao(dolar);</span>
+
+<span class="fc" id="L27">		return dolar;</span>
+	}
+
+	public Moeda consultarCotacaoPesoArgentino() {
+<span class="fc" id="L31">		selenium.selectByVisibleText(localizarComboMoedas(), &quot;Argentina - Peso&quot;);</span>
+
+<span class="fc" id="L33">		Moeda peso = new Moeda();</span>
+<span class="fc" id="L34">		preencherCotacao(peso);</span>
+
+<span class="fc" id="L36">		return peso;</span>
+	}
+
+	public Moeda consultarCotacaoEuro() {
+<span class="fc" id="L40">		selenium.selectByVisibleText(localizarComboMoedas(), &quot;Alemanha - Euro&quot;);</span>
+
+<span class="fc" id="L42">		Moeda euro = new Moeda();</span>
+<span class="fc" id="L43">		preencherCotacao(euro);</span>
+
+<span class="fc" id="L45">		return euro;</span>
+	}
+
+	private Moeda preencherCotacao(Moeda moeda) {
+<span class="fc" id="L49">		moeda.setNome(selenium.getText(&quot;div.navegacao-cambio h2&quot;));</span>
+<span class="fc" id="L50">		moeda.setHorario(selenium.getText(localizarMoedaHorario()));</span>
+<span class="fc" id="L51">		moeda.setCompra(selenium.getText(localizarMoedaCompra()));</span>
+<span class="fc" id="L52">		moeda.setVenda(selenium.getText(localizarMoedaVenda()));</span>
+<span class="fc" id="L53">		moeda.setPorcentagemVariacao(selenium</span>
+<span class="fc" id="L54">				.getText(localizarMoedaPorcentagemVariacao()));</span>
+<span class="fc" id="L55">		moeda.setMoedaVariacao(selenium.getText(localizarMoedaVariacao()));</span>
+<span class="fc" id="L56">		moeda.setValorMaximo(selenium.getText(localizarMoedaMaximo()));</span>
+<span class="fc" id="L57">		moeda.setValorMinimo(selenium.getText(localizarMoedaMinimo()));</span>
+<span class="fc" id="L58">		return moeda;</span>
+	}
+
+	private String localizarMoedaHorario() {
+<span class="fc" id="L62">		return &quot;td.date&quot;;</span>
+	}
+
+	private String localizarMoedaCompra() {
+<span class="fc" id="L66">		return &quot;td.bid&quot;;</span>
+	}
+
+	private String localizarMoedaVenda() {
+<span class="fc" id="L70">		return &quot;td.ask&quot;;</span>
+	}
+
+	private String localizarMoedaPorcentagemVariacao() {
+<span class="fc" id="L74">		return &quot;td[class='pctChange ultima']&quot;;</span>
+
+	}
+
+	private String localizarMoedaVariacao() {
+<span class="fc" id="L79">		return &quot;td[class='varBid ultima']&quot;;</span>
+	}
+
+	private String localizarMoedaMaximo() {
+<span class="fc" id="L83">		return &quot;td.high&quot;;</span>
+	}
+
+	private String localizarMoedaMinimo() {
+<span class="fc" id="L87">		return &quot;td.low&quot;;</span>
+	}
+
+	private String localizarComboMoedas() {
+<span class="fc" id="L91">		return &quot;div#combo-moedas form select&quot;;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.5.9.201207300726</span>andvicente-Selenium-Aula-f3211db (17/10/2012 22:48:37)</div></body></html>

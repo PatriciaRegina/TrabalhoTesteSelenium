@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CotacaoMoedasTeste.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">andvicente-Selenium-Aula-f3211db (17/10/2012 22:48:37)</a> &gt; <a href="../../index.html" class="el_group">andvicente-Selenium-Aula-f3211db</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.html" class="el_package">com.andre.selenium.testes.cotacao</a> &gt; <span class="el_source">CotacaoMoedasTeste.java</span></div><h1>CotacaoMoedasTeste.java</h1><pre class="source lang-java linenums">package com.andre.selenium.testes.cotacao;
+
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Locale;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.andre.selenium.SeleniumTeste;
+import com.andre.selenium.SeleniumWebDriver;
+import com.andre.selenium.dominio.Moeda;
+import com.andre.selenium.telas.cotacao.TelaCotacoesUOL;
+import com.andre.selenium.telas.cotacao.TelaHistoricoMoeda;
+
+<span class="fc" id="L17">public class CotacaoMoedasTeste extends SeleniumTeste {</span>
+
+	TelaCotacoesUOL telaCotacoes;
+	SeleniumWebDriver selenium;
+
+	@Before
+	public void prepararCotacoes() {
+<span class="fc" id="L24">		this.selenium = new SeleniumWebDriver(driver);</span>
+<span class="fc" id="L25">		this.telaCotacoes = new TelaCotacoesUOL(selenium);</span>
+<span class="fc" id="L26">		this.telaCotacoes.abrir();</span>
+<span class="fc" id="L27">	}</span>
+
+	/**
+	 * Compara a cotação do Dolar, Peso e Euro e verifica se o Euro é a que
+	 * possui a cotação mais alta.
+	 * 
+	 * @throws ParseException
+	 */
+	@Test
+	public void testeCotacaoDiariaDolarPesoEuro() throws ParseException {
+<span class="fc" id="L37">		Moeda peso = telaCotacoes.consultarCotacaoPesoArgentino();</span>
+<span class="fc" id="L38">		Moeda dolar = telaCotacoes.consultarCotacaoDolarComercial();</span>
+<span class="fc" id="L39">		Moeda euro = telaCotacoes.consultarCotacaoEuro();</span>
+<span class="fc" id="L40">		assertTrue(euroCotacaoMaisAlta(peso, dolar, euro));</span>
+<span class="fc" id="L41">	}</span>
+
+	private boolean euroCotacaoMaisAlta(Moeda peso, Moeda dolar, Moeda euro)
+			throws ParseException {
+
+<span class="fc" id="L46">		NumberFormat nf = NumberFormat.getInstance(Locale.US);</span>
+<span class="fc" id="L47">		float vendaPeso = nf.parse(peso.getVenda()).floatValue();</span>
+<span class="fc" id="L48">		float vendaDolar = nf.parse(dolar.getVenda()).floatValue();</span>
+<span class="fc" id="L49">		float vendaEuro = nf.parse(euro.getVenda()).floatValue();</span>
+
+<span class="pc bpc" id="L51" title="2 of 4 branches missed.">		if ((vendaEuro &gt; vendaPeso) &amp;&amp; (vendaEuro &gt; vendaDolar))</span>
+<span class="fc" id="L52">			return true;</span>
+		else
+<span class="nc" id="L54">			return false;</span>
+	}
+
+	/**
+	 * Verifica a cotação do dólar comercial (Venda) mais baixa e mais alta dos
+	 * últimos 50 dias
+	 */
+	@Test
+	public void testeCotacaoMaisBaixaAltaDolarUltimos50dias() {
+<span class="nc" id="L63">		telaCotacoes.consultarCotacaoDolarComercial();</span>
+<span class="nc" id="L64">		TelaHistoricoMoeda historicoMoeda = new TelaHistoricoMoeda(selenium);</span>
+<span class="nc" id="L65">		ArrayList cotacaoMaisBaixaMaisAlta = historicoMoeda</span>
+<span class="nc" id="L66">				.getCotacaoMoedaMaisBaixaMaisAlta();</span>
+
+<span class="nc" id="L68">		selenium.takeScreenshot();</span>
+
+<span class="nc" id="L70">		assertEquals(&quot;14/09/2012 2,0111&quot;, cotacaoMaisBaixaMaisAlta.get(0));</span>
+<span class="nc" id="L71">		assertEquals(&quot;02/08/2012 2,0507&quot;, cotacaoMaisBaixaMaisAlta.get(1));</span>
+<span class="nc" id="L72">		System.out.println(&quot;Cotação mais BAIXA: &quot;</span>
+<span class="nc" id="L73">				+ cotacaoMaisBaixaMaisAlta.get(0));</span>
+<span class="nc" id="L74">		System.out.println(&quot;Cotação mais ALTA:  &quot;</span>
+<span class="nc" id="L75">				+ cotacaoMaisBaixaMaisAlta.get(1));</span>
+<span class="nc" id="L76">	}</span>
+
+	/**
+	 * Dado que a cota para viagens para o exterior é de $500. Consulte a cota
+	 * em R$ (reais) utilizando o &quot;Conversor de Moedas&quot;
+	 */
+	@Test
+	public void testeConsultaLimiteCotaViagemExteriorEmReais() {
+		// TODO: Implementar Caso de Teste (Limite Cota Viagem Exterior)
+<span class="fc" id="L85">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.5.9.201207300726</span>andvicente-Selenium-Aula-f3211db (17/10/2012 22:48:37)</div></body></html>

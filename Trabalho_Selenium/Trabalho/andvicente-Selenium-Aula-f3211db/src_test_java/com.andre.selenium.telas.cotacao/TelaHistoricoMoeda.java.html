@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>TelaHistoricoMoeda.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">andvicente-Selenium-Aula-f3211db (17/10/2012 22:48:37)</a> &gt; <a href="../../index.html" class="el_group">andvicente-Selenium-Aula-f3211db</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.html" class="el_package">com.andre.selenium.telas.cotacao</a> &gt; <span class="el_source">TelaHistoricoMoeda.java</span></div><h1>TelaHistoricoMoeda.java</h1><pre class="source lang-java linenums"><span class="fc" id="L1">package com.andre.selenium.telas.cotacao;</span>
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import com.andre.selenium.SeleniumWebDriver;
+
+public class TelaHistoricoMoeda {
+
+	private SeleniumWebDriver selenium;
+<span class="fc" id="L20">	private SimpleDateFormat formatadorData = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+
+<span class="fc" id="L22">	public TelaHistoricoMoeda(SeleniumWebDriver selenium) {</span>
+<span class="fc" id="L23">		this.selenium = selenium;</span>
+<span class="fc" id="L24">	}</span>
+
+	@SuppressWarnings(&quot;rawtypes&quot;)
+	public ArrayList getCotacaoMoedaMaisBaixaMaisAlta() {
+<span class="fc" id="L28">		selenium.clickByLinkText(localizarHistoricoMoeda());</span>
+<span class="fc" id="L29">		selenium.selectFrame(localizarFrameHistorico());</span>
+
+<span class="fc" id="L31">		selenium.type(localizarDataInicial(), &quot;01/01/2012&quot;);</span>
+<span class="fc" id="L32">		Date hoje = new Date();</span>
+<span class="fc" id="L33">		String diaHoje = formatadorData.format(hoje);</span>
+<span class="fc" id="L34">		selenium.type(localizarDataFinal(), diaHoje);</span>
+<span class="fc" id="L35">		selenium.click(localizarBotaoOKIntervaloData());</span>
+<span class="fc" id="L36">		selenium.selectByVisibleText(localizarComboQtdeLinhas(), &quot;50 Linhas&quot;);</span>
+
+<span class="fc" id="L38">		Map&lt;String, String&gt; cotacoes = getCotacoesMoedaHistoricoUltimos50dias();</span>
+<span class="fc" id="L39">		Map&lt;String, String&gt; cotacoesOrdenadas = sortByComparator(cotacoes);</span>
+<span class="fc" id="L40">		return getCotacaoMaisAltaMaisBaixa(cotacoesOrdenadas);</span>
+
+	}
+
+	private Map&lt;String, String&gt; getCotacoesMoedaHistoricoUltimos50dias() {
+<span class="fc" id="L45">		Map&lt;String, String&gt; cotacoes = new HashMap&lt;String, String&gt;();</span>
+
+<span class="fc bfc" id="L47" title="All 2 branches covered.">		for (int i = 1; i &lt;= 50; i++) {</span>
+<span class="fc" id="L48">			String data = getCelulaTabelaHistoricoMoeda(i, 1);</span>
+<span class="fc" id="L49">			String venda = getCelulaTabelaHistoricoMoeda(i, 3);</span>
+<span class="fc" id="L50">			cotacoes.put(data, venda);</span>
+<span class="fc" id="L51">			System.out.println(i + &quot; Cotação: &quot; + data + &quot; &quot; + venda);</span>
+		}
+<span class="fc" id="L53">		return cotacoes;</span>
+	}
+
+	/**
+	 * Retorna a cotação mais baixa e mais alta de uma moeda e sua respectivas
+	 * datas.
+	 * 
+	 * @param cotacoesOrdenadas
+	 * @return String (Cotacao Mais Baixa e Mais Alta)
+	 */
+	@SuppressWarnings({ &quot;rawtypes&quot;, &quot;unchecked&quot; })
+	private ArrayList getCotacaoMaisAltaMaisBaixa(
+			Map&lt;String, String&gt; cotacoesOrdenadas) {
+<span class="fc" id="L66">		int i = 0;</span>
+<span class="fc" id="L67">		String cotacaoMaisAlta = &quot;&quot;;</span>
+<span class="fc" id="L68">		String cotacaoMaisBaixa = &quot;&quot;;</span>
+<span class="fc" id="L69">		ArrayList cotacaoMaisBaixaAlta = new ArrayList();</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">		for (Map.Entry entry : cotacoesOrdenadas.entrySet()) {</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">			if (i == 0)</span>
+<span class="fc" id="L72">				cotacaoMaisBaixa = entry.getKey() + &quot; &quot; + entry.getValue();</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">			if (i == 49)</span>
+<span class="fc" id="L74">				cotacaoMaisAlta = entry.getKey() + &quot; &quot; + entry.getValue();</span>
+<span class="fc" id="L75">			i++;</span>
+		}
+<span class="fc" id="L77">		cotacaoMaisBaixaAlta.add(cotacaoMaisBaixa);</span>
+<span class="fc" id="L78">		cotacaoMaisBaixaAlta.add(cotacaoMaisAlta);</span>
+<span class="fc" id="L79">		return cotacaoMaisBaixaAlta;</span>
+	}
+
+	private String getCelulaTabelaHistoricoMoeda(int nLinha, int nColuna) {
+<span class="fc" id="L83">		return selenium.getText(localizarCelulaTabelaHistoricoMoeda(nLinha,</span>
+<span class="fc" id="L84">				nColuna));</span>
+	}
+
+	// MÉTODOS DE LOCALIZAÇÃO DE ELEMENTOS DA TELA
+
+	private String localizarCelulaTabelaHistoricoMoeda(int nLinha, int nColuna) {
+<span class="fc" id="L90">		return &quot;table.tabela-historica tbody tr:nth-of-type(&quot; + nLinha</span>
+<span class="fc" id="L91">				+ &quot;) td:nth-of-type(&quot; + nColuna + &quot;)&quot;;</span>
+	}
+
+	private String localizarHistoricoMoeda() {
+<span class="fc" id="L95">		return &quot;Histórico da moeda&quot;;</span>
+	}
+
+	private String localizarFrameHistorico() {
+<span class="fc" id="L99">		return &quot;frame-historico&quot;;</span>
+	}
+
+	private String localizarDataInicial() {
+<span class="fc" id="L103">		return &quot;div.consulta input#begin&quot;;</span>
+	}
+
+	private String localizarDataFinal() {
+<span class="fc" id="L107">		return &quot;div.consulta input#end&quot;;</span>
+	}
+
+	private String localizarBotaoOKIntervaloData() {
+<span class="fc" id="L111">		return &quot;input.botao3&quot;;</span>
+	}
+
+	private String localizarComboQtdeLinhas() {
+<span class="fc" id="L115">		return &quot;select#linhas&quot;;</span>
+	}
+
+	private static Map sortByComparator(Map unsortMap) {
+
+<span class="fc" id="L120">		List list = new LinkedList(unsortMap.entrySet());</span>
+
+<span class="fc" id="L122">		System.out.print(&quot;Ordenando Cotações... \n&quot;);</span>
+		// sort list based on comparator
+<span class="fc" id="L124">		Collections.sort(list, new Comparator() {</span>
+			public int compare(Object o1, Object o2) {
+<span class="fc" id="L126">				return ((Comparable) ((Map.Entry) (o1)).getValue())</span>
+<span class="fc" id="L127">						.compareTo(((Map.Entry) (o2)).getValue());</span>
+			}
+		});
+
+<span class="fc" id="L131">		System.out.print(&quot;FIM Ordenação Cotações... \n&quot;);</span>
+
+		// put sorted list into map again
+<span class="fc" id="L134">		Map sortedMap = new LinkedHashMap();</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">		for (Iterator it = list.iterator(); it.hasNext();) {</span>
+<span class="fc" id="L136">			Map.Entry entry = (Map.Entry) it.next();</span>
+<span class="fc" id="L137">			sortedMap.put(entry.getKey(), entry.getValue());</span>
+		}
+<span class="fc" id="L139">		return sortedMap;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.5.9.201207300726</span>andvicente-Selenium-Aula-f3211db (17/10/2012 22:48:37)</div></body></html>

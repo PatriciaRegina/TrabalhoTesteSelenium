@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>CampeonatoBrasileiroTestes.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">andvicente-Selenium-Aula-f3211db (17/10/2012 22:48:37)</a> &gt; <a href="../../index.html" class="el_group">andvicente-Selenium-Aula-f3211db</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.html" class="el_package">com.andre.selenium.testes.brasileirao</a> &gt; <span class="el_source">CampeonatoBrasileiroTestes.java</span></div><h1>CampeonatoBrasileiroTestes.java</h1><pre class="source lang-java linenums">package com.andre.selenium.testes.brasileirao;
+
+import java.util.ArrayList;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.andre.selenium.SeleniumTeste;
+import com.andre.selenium.SeleniumWebDriver;
+import com.andre.selenium.telas.brasileirao.TelaTabelaBrasileirao;
+import com.andre.selenium.telas.brasileirao.Times;
+
+<span class="fc" id="L13">public class CampeonatoBrasileiroTestes extends SeleniumTeste {</span>
+
+	TelaTabelaBrasileirao telaBrasileiro;
+	SeleniumWebDriver selenium;
+
+	@Before
+	public void prepararBrasileiro() {
+<span class="fc" id="L20">		this.selenium = new SeleniumWebDriver(driver);</span>
+<span class="fc" id="L21">		this.telaBrasileiro = new TelaTabelaBrasileirao(selenium);</span>
+<span class="fc" id="L22">		this.telaBrasileiro.abrir();</span>
+<span class="fc" id="L23">	}</span>
+
+	@Test
+	public void testarClassificadosLibertadores() {
+<span class="fc" id="L27">		ArrayList&lt;String&gt; classificados = telaBrasileiro</span>
+<span class="fc" id="L28">				.getEstatisticasTimeLibertadores();</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">		for (int i = 0; i &lt; classificados.size(); i++) {</span>
+<span class="fc" id="L30">			System.out.println(classificados.get(i));</span>
+		}
+
+<span class="fc" id="L33">	}</span>
+
+	private void consultas() {
+<span class="nc" id="L36">		ArrayList classificados = telaBrasileiro</span>
+<span class="nc" id="L37">				.getEstatisticasTimeLibertadores();</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">		for (int i = 0; i &lt; classificados.size(); i++) {</span>
+<span class="nc" id="L39">			Times t = (Times) classificados.get(i);</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">			if (t.getTime().toLowerCase().endsWith(&quot;palmeiras&quot;)) {</span>
+<span class="nc" id="L41">				System.out.println(&quot;Classificação do Palmeiras: &quot; + (i + 1)</span>
+<span class="nc" id="L42">						+ &quot;°\n&quot;);</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">				if (i &gt; 15) {</span>
+<span class="nc" id="L44">					System.out</span>
+<span class="nc" id="L45">							.println(&quot;O Palmeiras será rebaixado a Série B\n&quot;);</span>
+				}
+			}
+<span class="nc bnc" id="L48" title="All 2 branches missed.">			if (i &gt;= 16) {</span>
+<span class="nc" id="L49">				System.out.println(&quot;Clube rebaixado para Série B:\n&quot;</span>
+<span class="nc" id="L50">						+ classificados.get(i));</span>
+			}
+		}
+<span class="nc" id="L53">	}</span>
+
+	@Test
+	public void testarRebaixadosLibertadores() {
+<span class="fc" id="L57">		ArrayList&lt;String&gt; rebaixados = telaBrasileiro</span>
+<span class="fc" id="L58">				.getEstatisticaTimesRebaixados();</span>
+
+<span class="fc" id="L60">		System.out.println(rebaixados);</span>
+<span class="fc" id="L61">	}</span>
+
+	@Test
+	public void testarPalmeiras() {
+<span class="fc" id="L65">		ArrayList&lt;String&gt; palmeiras = telaBrasileiro.getPalmeiras();</span>
+<span class="fc" id="L66">		System.out.print(palmeiras);</span>
+<span class="fc" id="L67">	}</span>
+
+	@Test
+	public void testarCorinthians() {
+<span class="fc" id="L71">		ArrayList&lt;String&gt; cori = telaBrasileiro.getCorinthians();</span>
+<span class="fc" id="L72">		System.out.print(cori);</span>
+<span class="fc" id="L73">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.5.9.201207300726</span>andvicente-Selenium-Aula-f3211db (17/10/2012 22:48:37)</div></body></html>
